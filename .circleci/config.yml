@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: python:buster
+    steps:
+      - checkout
+      - run pip install -r requirements.txt
+      - run make github
+
+workflows:
+  publish-article:
+    jobs:
+      - build:
+        filters:
+            only: pelican
