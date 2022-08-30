@@ -6,8 +6,8 @@ jobs:
       - image: python:buster
     steps:
       - checkout
-      - run pip install -r requirements.txt
-      - run make github
+      - run: pip install -r requirements.txt
+      - run: make github
 
 workflows:
   publish-article:
